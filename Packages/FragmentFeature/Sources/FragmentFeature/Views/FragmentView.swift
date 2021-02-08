@@ -41,7 +41,6 @@ public struct FragmentView: View {
                 }
                 
                 children
-                
             }
             .onAppear(perform: fetch)
         }

@@ -1,0 +1,19 @@
+{
+  "success": true,
+  "data": {
+    "id": "001",
+    "firstname": "Clark",
+    "surname": "Griswold, Jr",
+    "dob": "08101943",
+    "image": "https://m.media-amazon.com/images/M/MV5BMTMwNTY2ODA4OV5BMl5BanBnXkFtZTcwOTE1NjAxMw@@._V1_UY317_CR15,0,214,317_AL_.jpg",
+    "relationships": {
+      "spouse": "002",
+      "mother": "008",
+      "father": "007",
+      "children": [
+        "009",
+        "010"
+      ]
+    }
+  }
+}

@@ -21,6 +21,7 @@
 		E150A9EF25D14CB80071C6B4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E150A9F125D14CB80071C6B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E150A9FE25D14E6E0071C6B4 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Networking; sourceTree = "<group>"; };
+		E150AA0025D150590071C6B4 /* Shared */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Shared; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +99,7 @@
 		E150A9FD25D14E490071C6B4 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				E150AA0025D150590071C6B4 /* Shared */,
 				E150A9FE25D14E6E0071C6B4 /* Networking */,
 			);
 			path = Packages;

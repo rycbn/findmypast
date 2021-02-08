@@ -61,6 +61,20 @@ public struct Relationships: Codable, Equatable {
 extension Profile {
     
     public static let profile1 = Self(
+        id: "001",
+        firstname: "Clark",
+        surname: "Griswold, Jr",
+        dob: "08101943",
+        image: "https://m.media-amazon.com/images/M/MV5BMTMwNTY2ODA4OV5BMl5BanBnXkFtZTcwOTE1NjAxMw@@._V1_UY317_CR15,0,214,317_AL_.jpg",
+        relationships: Relationships(
+            spouse: "002",
+            mother: "008",
+            father: "007",
+            children: ["009", "010"]
+        )
+    )
+    
+    public static let profile2 = Self(
         id: "010",
         firstname: "Russ",
         surname: "Griswold",
@@ -68,16 +82,6 @@ extension Profile {
         image: "https://m.media-amazon.com/images/M/MV5BNzQ2ODY0MTIwMV5BMl5BanBnXkFtZTcwNDQ2NzMzMw@@._V1_UX178_CR0,0,178,264_AL_.jpg",
         relationships: Relationships(
             mother: "002",
-            father: "001"
-        )
-    )
-    
-    public static let profile2 = Self(
-        id: "002",
-        firstname: "John",
-        surname: "Smith",
-        dob: "",
-        relationships: Relationships(
             father: "001"
         )
     )

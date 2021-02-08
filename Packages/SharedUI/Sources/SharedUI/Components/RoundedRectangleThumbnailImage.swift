@@ -24,7 +24,7 @@ public struct RoundedRectangleThumbnailImage: View {
             }
         }
         .clipShape(shape)
-        .frame(width: 150, height: 245)
+        .frame(width: 100, height: 150)
     }
 }
 

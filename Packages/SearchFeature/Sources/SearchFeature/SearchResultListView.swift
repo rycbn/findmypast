@@ -33,7 +33,18 @@ struct SearchResultListView: View {
     private var content: some View {
         List {
             ForEach(viewModel.isLoading ? Person.placeholder : viewModel.persons) { person in
-                Text("text \(person.firstname)")
+                NavigationLink(
+                    destination: SearchFragmentView(
+                        viewModel: .init(
+                            client: .live,
+                            personId: person.id,
+                            username: username,
+                            persons: viewModel.persons
+                        )
+                    )
+                ) {
+                    SearchResultListRowView(person: person)
+                }
             }
         }
     }

@@ -15,6 +15,7 @@ public struct ProfileResponse: Codable {
 }
 
 extension ProfileResponse {
-    public static let mock = Self(success: true, data: .profile1)
+    public static let mockProfile1 = Self(success: true, data: .profile1)
+    public static let mockProfile2 = Self(success: true, data: .profile2)
     public static let error = Self(success: false, error: "Something is wrong with your tree")
 }

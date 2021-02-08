@@ -15,6 +15,6 @@ public struct PersonsResponse: Codable {
 }
 
 extension PersonsResponse {
-    public static let mock = Self(success: true, data: [.person1, .person2])
+    public static let mock = Self(success: true, data: Person.mock)
     public static let error = Self(success: false, error: "User doesn't exist.")
 }

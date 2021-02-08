@@ -20,6 +20,7 @@
 		E150A9EC25D14CB80071C6B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E150A9EF25D14CB80071C6B4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E150A9F125D14CB80071C6B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E150A9FE25D14E6E0071C6B4 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Networking; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +37,7 @@
 		E150A9C625D14CAB0071C6B4 = {
 			isa = PBXGroup;
 			children = (
+				E150A9FD25D14E490071C6B4 /* Packages */,
 				E150A9E725D14CB80071C6B4 /* fmp */,
 				E150A9D025D14CAB0071C6B4 /* Products */,
 			);
@@ -91,6 +93,14 @@
 				E150A9EA25D14CB80071C6B4 /* ContentView.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		E150A9FD25D14E490071C6B4 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				E150A9FE25D14E6E0071C6B4 /* Networking */,
+			);
+			path = Packages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -15,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E11EB17725D1988B0018F581 /* FragmentFeature */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FragmentFeature; sourceTree = "<group>"; };
 		E150A9E625D14CB80071C6B4 /* fmp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fmp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E150A9E825D14CB80071C6B4 /* FindMyPastApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMyPastApp.swift; sourceTree = "<group>"; };
 		E150A9EA25D14CB80071C6B4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -104,6 +105,7 @@
 		E150A9FD25D14E490071C6B4 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				E11EB17725D1988B0018F581 /* FragmentFeature */,
 				E19FF49A25D1580E006A09B5 /* SearchFeature */,
 				E19FF49825D153A8006A09B5 /* SharedUI */,
 				E150AA0025D150590071C6B4 /* Shared */,

@@ -1,6 +1,7 @@
 import SwiftUI
 import SharedUI
 import Shared
+import FragmentFeature
 
 struct SearchResultListView: View {
     @ObservedObject var viewModel: SearchResultListViewModel
@@ -34,7 +35,7 @@ struct SearchResultListView: View {
         List {
             ForEach(viewModel.isLoading ? Person.placeholder : viewModel.persons) { person in
                 NavigationLink(
-                    destination: SearchFragmentView(
+                    destination: FragmentView(
                         viewModel: .init(
                             client: .live,
                             personId: person.id,

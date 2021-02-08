@@ -1,11 +1,11 @@
 import XCTest
-@testable import SearchFeature
+@testable import FragmentFeature
 import Shared
 
-final class SearchFragmentViewModelTests: XCTestCase {
+final class FragmentViewModelTests: XCTestCase {
  
     func testHappyPath_Profile1_withDynamicMemberLookup() {
-        let sut = SearchFragmentViewModel(
+        let sut = FragmentViewModel(
             client: .mockProfile1,
             personId: "010",
             username: "cgriswold",
@@ -39,7 +39,7 @@ final class SearchFragmentViewModelTests: XCTestCase {
     }
     
     func testHappyPath_Profile2() {
-        let sut = SearchFragmentViewModel(
+        let sut = FragmentViewModel(
             client: .mockProfile2,
             personId: "010",
             username: "cgriswold",
@@ -65,7 +65,7 @@ final class SearchFragmentViewModelTests: XCTestCase {
     }
     
     func testUnhappyPath() {
-        let sut = SearchFragmentViewModel(
+        let sut = FragmentViewModel(
             client: .error,
             personId: "010",
             username: "cgriswold",

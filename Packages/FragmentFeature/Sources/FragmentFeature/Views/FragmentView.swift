@@ -2,14 +2,14 @@ import SwiftUI
 import SharedUI
 import Shared
 
-struct SearchFragmentView: View {
-    @ObservedObject private(set) var viewModel: SearchFragmentViewModel
+public struct FragmentView: View {
+    @ObservedObject private(set) var viewModel: FragmentViewModel
 
-    init(viewModel: SearchFragmentViewModel) {
+    public init(viewModel: FragmentViewModel) {
         self.viewModel = viewModel
     }
 
-    var body: some View {
+    public var body: some View {
         ZStack {
             if viewModel.isLoading {
                 ActivityIndicator()
@@ -90,9 +90,9 @@ struct SearchFragmentView: View {
     }
 }
 
-struct TreeFragmentView_Previews: PreviewProvider {
+struct FragmentView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchFragmentView(
+        FragmentView(
             viewModel: .init(
                 client: .mockProfile1,
                 personId: "010",

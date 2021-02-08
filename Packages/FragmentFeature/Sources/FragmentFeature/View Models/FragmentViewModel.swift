@@ -3,7 +3,7 @@ import Combine
 import Shared
 import Networking
 
-final class SearchFragmentViewModel: ObservableObject {
+public final class FragmentViewModel: ObservableObject {
     @Published private(set) var profile: Profile?
     @Published private(set) var error: String?
     @Published private(set) var isLoading: Bool = false
@@ -22,7 +22,7 @@ final class SearchFragmentViewModel: ObservableObject {
             .replacingOccurrences(of: .userId, with: username)
     }
     
-    init(
+    public init(
         client: ProfileClient,
         personId: String,
         username: String,

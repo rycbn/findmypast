@@ -14,6 +14,7 @@ let package = Package(
         .package(path: "Shared"),
         .package(path: "SharedUI"),
         .package(path: "Networking"),
+        .package(path: "FragmentFeature")
     ],
     targets: [
         .target(
@@ -22,6 +23,7 @@ let package = Package(
                 "Shared",
                 "SharedUI",
                 "Networking",
+                "FragmentFeature",
             ]
         ),
         .testTarget(

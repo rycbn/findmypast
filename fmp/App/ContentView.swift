@@ -1,9 +1,9 @@
 import SwiftUI
+import SearchFeature
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        SearchView()
     }
 }
 

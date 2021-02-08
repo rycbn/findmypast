@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,7 @@
 		E150A9EB25D14CB80071C6B4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E150A9EA25D14CB80071C6B4 /* ContentView.swift */; };
 		E150A9ED25D14CB80071C6B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E150A9EC25D14CB80071C6B4 /* Assets.xcassets */; };
 		E150A9F025D14CB80071C6B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E150A9EF25D14CB80071C6B4 /* Preview Assets.xcassets */; };
+		E19FF49E25D15920006A09B5 /* SearchFeature in Frameworks */ = {isa = PBXBuildFile; productRef = E19FF49D25D15920006A09B5 /* SearchFeature */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		E150A9FE25D14E6E0071C6B4 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Networking; sourceTree = "<group>"; };
 		E150AA0025D150590071C6B4 /* Shared */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Shared; sourceTree = "<group>"; };
 		E19FF49825D153A8006A09B5 /* SharedUI */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SharedUI; sourceTree = "<group>"; };
+		E19FF49A25D1580E006A09B5 /* SearchFeature */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SearchFeature; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E19FF49E25D15920006A09B5 /* SearchFeature in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +45,7 @@
 				E150A9FD25D14E490071C6B4 /* Packages */,
 				E150A9E725D14CB80071C6B4 /* fmp */,
 				E150A9D025D14CAB0071C6B4 /* Products */,
+				E19FF49C25D15920006A09B5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,11 +104,19 @@
 		E150A9FD25D14E490071C6B4 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				E19FF49A25D1580E006A09B5 /* SearchFeature */,
 				E19FF49825D153A8006A09B5 /* SharedUI */,
 				E150AA0025D150590071C6B4 /* Shared */,
 				E150A9FE25D14E6E0071C6B4 /* Networking */,
 			);
 			path = Packages;
+			sourceTree = "<group>";
+		};
+		E19FF49C25D15920006A09B5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +135,9 @@
 			dependencies = (
 			);
 			name = fmp;
+			packageProductDependencies = (
+				E19FF49D25D15920006A09B5 /* SearchFeature */,
+			);
 			productName = fmp;
 			productReference = E150A9E625D14CB80071C6B4 /* fmp.app */;
 			productType = "com.apple.product-type.application";
@@ -366,6 +381,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E19FF49D25D15920006A09B5 /* SearchFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SearchFeature;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E150A9C725D14CAB0071C6B4 /* Project object */;
 }

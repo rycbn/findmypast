@@ -1,17 +1,58 @@
 import SwiftUI
 import SharedUI
+import Shared
 
 struct SearchResultListView: View {
+    @ObservedObject var viewModel: SearchResultListViewModel
+    
+    private let username: String
+    
+    init(username: String, viewModel: SearchResultListViewModel) {
+        self.username = username
+        self.viewModel = viewModel
+    }
+    
     var body: some View {
-        VStack {
-            ActivityIndicator()
-                .frame(maxWidth: .infinity)
+        ZStack {
+            if viewModel.isLoading {
+                ActivityIndicator()
+                    .frame(maxWidth: .infinity)
+            }
+            if let error = viewModel.error {
+                LoadingErrorMessage(error)
+            } else {
+                content
+                    .redacted(reason: viewModel.isLoading ? .placeholder : [])
+            }
         }
+        .navigationTitle(username)
+        .accessibility(label: Text("Username: \(username)"))
+        .onAppear(perform: search)
+    }
+    
+    private var content: some View {
+        List {
+            ForEach(viewModel.isLoading ? Person.placeholder : viewModel.persons) { person in
+                Text("text \(person.firstname)")
+            }
+        }
+    }
+    
+    private func search() {
+        guard viewModel.persons.isEmpty else { return }
+        viewModel.search(username: username)
     }
 }
 
 struct SearchResultListView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchResultListView()
+        NavigationView {
+            SearchResultListView(
+                username: "cgriswold",
+                viewModel: .init(
+                    client: .mock
+                )
+            )
+        }
     }
 }

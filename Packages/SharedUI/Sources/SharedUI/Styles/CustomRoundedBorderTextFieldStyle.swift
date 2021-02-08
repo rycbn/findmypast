@@ -22,6 +22,7 @@ struct CustomRoundedBorderTextFieldStyle_Previews: PreviewProvider {
     static var previews: some View {
         TextField("username", text: .constant(""))
             .autocapitalization(.none)
+            .disableAutocorrection(true)
             .textCase(.lowercase)
             .textFieldStyle(CustomRoundedBorderTextFieldStyle())
             .padding()

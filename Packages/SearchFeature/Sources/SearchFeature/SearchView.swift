@@ -2,18 +2,26 @@ import SwiftUI
 import SharedUI
 
 public struct SearchView: View {
+    @State private var username: String = ""
+    
     public init() {}
     
     public var body: some View {
         NavigationView {
             VStack {
-                TextField("Username", text: .constant(""))
+                TextField("Username", text: $username)
                     .autocapitalization(.none)
                     .textCase(.lowercase)
+                    .disableAutocorrection(true)
                     .textFieldStyle(CustomRoundedBorderTextFieldStyle())
                     .accessibility(label: Text("Username text field"))
                 
-                NavigationLink(destination: EmptyView()) {
+                NavigationLink(
+                    destination: SearchResultListView(
+                        username: username,
+                        viewModel: .init(client: .live)
+                    )
+                ) {
                     Text("Submit")
                         .accessibility(label: Text("Submit button"))
                 }

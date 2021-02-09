@@ -4,9 +4,10 @@
 - Using Kingfihser (https://github.com/onevcat/Kingfisher), a lightweight, pure-Swift library for downloading and caching images from the web.
 
 How to run the app
-1) Download zip file
-2) Select  `findmypast.xcodeproj`
-3) Make sure `Swift Package Dependencies` is fully downloaded 
-4) Select `fmp` target and  `iPhone/iPad` simulator
-5) Build and Run
-6) Test username `cgriswold`
+1) Make sure the `localhost:3001` server is run - https://github.com/findmypast/fmp-mobile-code-test
+2) Download zip file
+3) Select  `findmypast.xcodeproj`
+4) Make sure `Swift Package Dependencies` is fully downloaded 
+5) Select `fmp` target and  `iPhone/iPad` simulator
+6) Build and Run
+7) Test username `cgriswold`

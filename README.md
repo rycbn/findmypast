@@ -6,7 +6,7 @@
 How to run the app
 1) Make sure the `localhost:3001` server is run - https://github.com/findmypast/fmp-mobile-code-test
 2) Download zip file
-3) Select  `findmypast.xcodeproj`
+3) Select  `findmypast.xcworkspace`
 4) Make sure `Swift Package Dependencies` is fully downloaded 
 5) Select `fmp` target and  `iPhone/iPad` simulator
 6) Build and Run

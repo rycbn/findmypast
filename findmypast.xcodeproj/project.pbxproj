@@ -11,21 +11,16 @@
 		E150A9EB25D14CB80071C6B4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E150A9EA25D14CB80071C6B4 /* ContentView.swift */; };
 		E150A9ED25D14CB80071C6B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E150A9EC25D14CB80071C6B4 /* Assets.xcassets */; };
 		E150A9F025D14CB80071C6B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E150A9EF25D14CB80071C6B4 /* Preview Assets.xcassets */; };
-		E19FF49E25D15920006A09B5 /* SearchFeature in Frameworks */ = {isa = PBXBuildFile; productRef = E19FF49D25D15920006A09B5 /* SearchFeature */; };
+		E164295225DAC64B00190374 /* PersonsFeature in Frameworks */ = {isa = PBXBuildFile; productRef = E164295125DAC64B00190374 /* PersonsFeature */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E11EB17725D1988B0018F581 /* FragmentFeature */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FragmentFeature; sourceTree = "<group>"; };
 		E150A9E625D14CB80071C6B4 /* fmp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fmp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E150A9E825D14CB80071C6B4 /* FindMyPastApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindMyPastApp.swift; sourceTree = "<group>"; };
 		E150A9EA25D14CB80071C6B4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E150A9EC25D14CB80071C6B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E150A9EF25D14CB80071C6B4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E150A9F125D14CB80071C6B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E150A9FE25D14E6E0071C6B4 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Networking; sourceTree = "<group>"; };
-		E150AA0025D150590071C6B4 /* Shared */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Shared; sourceTree = "<group>"; };
-		E19FF49825D153A8006A09B5 /* SharedUI */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SharedUI; sourceTree = "<group>"; };
-		E19FF49A25D1580E006A09B5 /* SearchFeature */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SearchFeature; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,7 +28,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E19FF49E25D15920006A09B5 /* SearchFeature in Frameworks */,
+				E164295225DAC64B00190374 /* PersonsFeature in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,7 +38,6 @@
 		E150A9C625D14CAB0071C6B4 = {
 			isa = PBXGroup;
 			children = (
-				E150A9FD25D14E490071C6B4 /* Packages */,
 				E150A9E725D14CB80071C6B4 /* fmp */,
 				E150A9D025D14CAB0071C6B4 /* Products */,
 				E19FF49C25D15920006A09B5 /* Frameworks */,
@@ -102,18 +96,6 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		E150A9FD25D14E490071C6B4 /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				E11EB17725D1988B0018F581 /* FragmentFeature */,
-				E19FF49A25D1580E006A09B5 /* SearchFeature */,
-				E19FF49825D153A8006A09B5 /* SharedUI */,
-				E150AA0025D150590071C6B4 /* Shared */,
-				E150A9FE25D14E6E0071C6B4 /* Networking */,
-			);
-			path = Packages;
-			sourceTree = "<group>";
-		};
 		E19FF49C25D15920006A09B5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,7 +120,7 @@
 			);
 			name = fmp;
 			packageProductDependencies = (
-				E19FF49D25D15920006A09B5 /* SearchFeature */,
+				E164295125DAC64B00190374 /* PersonsFeature */,
 			);
 			productName = fmp;
 			productReference = E150A9E625D14CB80071C6B4 /* fmp.app */;
@@ -385,9 +367,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E19FF49D25D15920006A09B5 /* SearchFeature */ = {
+		E164295125DAC64B00190374 /* PersonsFeature */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = SearchFeature;
+			productName = PersonsFeature;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

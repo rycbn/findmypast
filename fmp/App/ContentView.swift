@@ -1,9 +1,9 @@
 import SwiftUI
-import SearchFeature
+import PersonsFeature
 
 struct ContentView: View {
     var body: some View {
-        SearchView()
+        PersonsSearchView(viewModel: .init())
     }
 }
 

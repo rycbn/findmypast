@@ -26,14 +26,12 @@ public struct PersonsSearchView: View {
     }
     
     private var submitButton: some View {
-        Button(action: viewModel.submitButtonTapped) {
-            NavigationLink(
-                destination: destinationView,
-                isActive: $viewModel.isNavigationActive
-            ) {
-                Text("Submit")
-                    .accessibility(label: Text("Submit button"))
-            }
+        NavigationLink(
+            destination: destinationView,
+            isActive: $viewModel.isNavigationActive
+        ) {
+            Button("Submit", action: viewModel.submitButtonTapped)
+            .accessibility(label: Text("Submit button"))
         }
         .buttonStyle(PrimaryButtonStyle())
     }

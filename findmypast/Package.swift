@@ -2,47 +2,22 @@
 
 import PackageDescription
 
+private let targets: [String] = [
+    "Shared",
+    "SharedUI",
+    "Networking",
+    "PersonsClient",
+    "PersonsClientLive",
+    "PersonsFeature",
+    "ProfileClient",
+    "ProfileClientLive",
+    "ProfileFeature",
+]
+
 let package = Package(
     name: "findmypast",
     platforms: [.iOS(.v14)],
-    products: [
-        .library(
-            name: "Shared",
-            targets: ["Shared"]
-        ),
-        .library(
-            name: "SharedUI",
-            targets: ["SharedUI"]
-        ),
-        .library(
-            name: "Networking",
-            targets: ["Networking"]
-        ),
-        .library(
-            name: "PersonsClient",
-            targets: ["PersonsClient"]
-        ),
-        .library(
-            name: "PersonsClientLive",
-            targets: ["PersonsClientLive"]
-        ),
-        .library(
-            name: "PersonsFeature",
-            targets: ["PersonsFeature"]
-        ),
-        .library(
-            name: "ProfileClient",
-            targets: ["ProfileClient"]
-        ),
-        .library(
-            name: "ProfileClientLive",
-            targets: ["ProfileClientLive"]
-        ),
-        .library(
-            name: "ProfileFeature",
-            targets: ["ProfileFeature"]
-        ),
-    ],
+    products: targets.map { .library(name: $0, targets: [$0]) },
     dependencies: [
         .package(
             url: "https://github.com/onevcat/Kingfisher",

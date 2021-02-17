@@ -7,5 +7,3 @@ public struct Networking {
         endpoint.baseURL?.appendingPathComponent(endpoint.path)
     }
 }
-
-// apiClient.setBaseURL(baseURL)

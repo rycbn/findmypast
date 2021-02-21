@@ -93,3 +93,8 @@ public final class ProfileViewModel: ObservableObject {
     }
 }
 
+extension ProfileViewModel: Equatable {
+    public static func == (lhs: ProfileViewModel, rhs: ProfileViewModel) -> Bool {
+        lhs.cancellable == rhs.cancellable
+    }
+}

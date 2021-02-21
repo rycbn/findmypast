@@ -12,7 +12,11 @@ public final class PersonsSearchViewModel: ObservableObject {
         self.isNavigationActive = isNavigationActive
     }
     
-    public func submitButtonTapped() {
+    func submitButtonTapped() {
         isNavigationActive = true
+    }
+    
+    var personsList: PersonsListViewModel {
+        PersonsListViewModel(username: username)
     }
 }

@@ -31,16 +31,13 @@ public struct PersonsSearchView: View {
             isActive: $viewModel.isNavigationActive
         ) {
             Button("Submit", action: viewModel.submitButtonTapped)
-            .accessibility(label: Text("Submit button"))
+                .accessibility(label: Text("Submit button"))
         }
         .buttonStyle(PrimaryButtonStyle())
     }
     
     private var destinationView: some View {       
-        PersonsListView(
-            username: viewModel.username,
-            viewModel: .init()
-        )
+        PersonsListView(viewModel: viewModel.personsList)
     }
 }
 

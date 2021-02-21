@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ProfileFeature"
-               BuildableName = "ProfileFeature"
-               BlueprintName = "ProfileFeature"
+               BlueprintIdentifier = "PersonsFeature"
+               BuildableName = "PersonsFeature"
+               BlueprintName = "PersonsFeature"
                ReferencedContainer = "container:">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,9 +33,9 @@
             testExecutionOrdering = "random">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ProfileFeatureTests"
-               BuildableName = "ProfileFeatureTests"
-               BlueprintName = "ProfileFeatureTests"
+               BlueprintIdentifier = "PersonsFeatureTests"
+               BuildableName = "PersonsFeatureTests"
+               BlueprintName = "PersonsFeatureTests"
                ReferencedContainer = "container:">
             </BuildableReference>
          </TestableReference>
@@ -61,9 +61,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "ProfileFeature"
-            BuildableName = "ProfileFeature"
-            BlueprintName = "ProfileFeature"
+            BlueprintIdentifier = "PersonsFeature"
+            BuildableName = "PersonsFeature"
+            BlueprintName = "PersonsFeature"
             ReferencedContainer = "container:">
          </BuildableReference>
       </MacroExpansion>

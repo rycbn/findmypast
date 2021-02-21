@@ -7,10 +7,7 @@ import ProfileFeature
 struct PersonsListView: View {
     @ObservedObject var viewModel: PersonsListViewModel
     
-    private let username: String
-    
-    init(username: String, viewModel: PersonsListViewModel) {
-        self.username = username
+    init(viewModel: PersonsListViewModel) {
         self.viewModel = viewModel
     }
     
@@ -27,8 +24,8 @@ struct PersonsListView: View {
                     .redacted(reason: viewModel.isLoading ? .placeholder : [])
             }
         }
-        .navigationTitle(username)
-        .accessibility(label: Text("Username: \(username)"))
+        .navigationTitle(viewModel.username)
+        .accessibility(label: Text("Username: \(viewModel.username)"))
         .onAppear(perform: search)
     }
     
@@ -43,13 +40,7 @@ struct PersonsListView: View {
     }
     
     private func destinationView(_ id: String) -> some View {
-        ProfileView(
-            viewModel: .init(
-                personId: id,
-                username: username,
-                persons: viewModel.persons
-            )
-        )
+        ProfileView(viewModel: viewModel.profile(id))
     }
     
     private var persons: [Person] {
@@ -58,7 +49,7 @@ struct PersonsListView: View {
     
     private func search() {
         guard viewModel.persons.isEmpty else { return }
-        viewModel.search(username)
+        viewModel.search()
     }
 }
 
@@ -66,7 +57,6 @@ struct PersonsListView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             PersonsListView(
-                username: "cgriswold",
                 viewModel: .init(
                     client: .mock
                 )

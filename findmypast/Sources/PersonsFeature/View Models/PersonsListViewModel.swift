@@ -4,32 +4,44 @@ import Shared
 import Networking
 import PersonsClientLive
 import PersonsClient
+import ProfileFeature
 
 final class PersonsListViewModel: ObservableObject {
     @Published private(set) var persons: [Person] = []
     @Published private(set) var error: String? = nil
     @Published private(set) var isLoading: Bool = false
     
+    private(set) var username: String
     private let client: PersonsClient
     private let networking: Networking
     private var cancellable: AnyCancellable?
     
-    private func url(for username: String) -> URL? {
+    private var url: URL? {
         networking
             .request(.persons)?
             .replacingOccurrences(of: .userId, with: username)
     }
  
     init(
+        username: String = "",
         client: PersonsClient = .live,
         networking: Networking = .init()
     ) {
+        self.username = username
         self.client = client
         self.networking = networking
     }
     
-    func search(_ username: String) {
-        guard let url = url(for: username) else { return }
+    func profile(_ personId: String) -> ProfileViewModel {
+        ProfileViewModel(
+            personId: personId,
+            username: username,
+            persons: persons
+        )
+    }
+    
+    func search() {
+        guard let url = url else { return }
         isLoading = true
         cancellable = client
             .persons(url)
@@ -52,5 +64,11 @@ final class PersonsListViewModel: ObservableObject {
                     }
                 }
             )
+    }
+}
+
+extension PersonsListViewModel: Equatable {
+    static func == (lhs: PersonsListViewModel, rhs: PersonsListViewModel) -> Bool {
+        lhs.cancellable == rhs.cancellable
     }
 }

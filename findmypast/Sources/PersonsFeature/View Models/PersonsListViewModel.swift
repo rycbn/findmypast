@@ -14,6 +14,7 @@ final class PersonsListViewModel: ObservableObject {
     private(set) var username: String
     private let client: PersonsClient
     private let networking: Networking
+    private let mainQueue: DispatchQueue
     private var cancellable: AnyCancellable?
     
     private var url: URL? {
@@ -25,11 +26,13 @@ final class PersonsListViewModel: ObservableObject {
     init(
         username: String = "",
         client: PersonsClient = .live,
-        networking: Networking = .init()
+        networking: Networking = .init(),
+        mainQueue: DispatchQueue = .main
     ) {
         self.username = username
         self.client = client
         self.networking = networking
+        self.mainQueue = mainQueue
     }
     
     func profile(_ personId: String) -> ProfileViewModel {
@@ -45,6 +48,8 @@ final class PersonsListViewModel: ObservableObject {
         isLoading = true
         cancellable = client
             .persons(url)
+            .delay(for: 0.3, scheduler: mainQueue)
+            .receive(on: mainQueue)
             .sink(
                 receiveCompletion: { [weak self] completion in
                     switch completion {

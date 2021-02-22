@@ -15,6 +15,7 @@ public final class ProfileViewModel: ObservableObject {
     private let username: String
     private let persons: [Person]
     private let networking: Networking
+    private let mainQueue: DispatchQueue
     private var cancellable: AnyCancellable?
     
     private var url: URL? {
@@ -29,13 +30,15 @@ public final class ProfileViewModel: ObservableObject {
         personId: String,
         username: String,
         persons: [Person],
-        networking: Networking = .init()
+        networking: Networking = .init(),
+        mainQueue: DispatchQueue = .main
     ) {
         self.client = client
         self.personId = personId
         self.username = username
         self.persons = persons
         self.networking = networking
+        self.mainQueue = mainQueue
     }
     
     var selectedPerson: Person? {
@@ -71,6 +74,8 @@ public final class ProfileViewModel: ObservableObject {
         isLoading = true
         cancellable = client
             .fetch(url)
+            .delay(for: 0.3, scheduler: mainQueue)
+            .receive(on: mainQueue)
             .sink(
                 receiveCompletion: { [weak self] completion in
                     switch completion {

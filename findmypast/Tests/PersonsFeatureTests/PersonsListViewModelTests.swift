@@ -9,6 +9,8 @@ final class PersonsListViewModelTests: XCTestCase {
         let sut = PersonsListViewModel(username: "happyPath", client: .mock)
         
         sut.search()
+        
+        _ = XCTWaiter.wait(for: [XCTestExpectation()], timeout: 0.5)
 
         XCTAssertNil(sut.error)
         XCTAssertEqual(sut.persons.count, 6)
@@ -34,6 +36,8 @@ final class PersonsListViewModelTests: XCTestCase {
         let sut = PersonsListViewModel(username: "unhapptpath", client: .error)
         
         sut.search()
+        
+        _ = XCTWaiter.wait(for: [XCTestExpectation()], timeout: 0.5)
         
         XCTAssertNotNil(sut.error)
         XCTAssertEqual(sut.error, "Sorry, User doesn't exist.")

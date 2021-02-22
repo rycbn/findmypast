@@ -14,6 +14,8 @@ final class ProfileViewModelTests: XCTestCase {
         
         sut.fetch()
         
+        _ = XCTWaiter.wait(for: [XCTestExpectation()], timeout: 0.5)
+        
         XCTAssertNil(sut.error)
         XCTAssertEqual(sut.profile?.id, "001")
         XCTAssertEqual(sut.profile?.firstname, "Clark")
@@ -47,7 +49,9 @@ final class ProfileViewModelTests: XCTestCase {
         )
         
         sut.fetch()
-                
+
+        _ = XCTWaiter.wait(for: [XCTestExpectation()], timeout: 0.5)
+        
         XCTAssertNil(sut.error)
         XCTAssertEqual(sut.profile?.id, "010")
         XCTAssertEqual(sut.profile?.firstname, "Russ")
@@ -73,6 +77,8 @@ final class ProfileViewModelTests: XCTestCase {
         )
         
         sut.fetch()
+        
+        _ = XCTWaiter.wait(for: [XCTestExpectation()], timeout: 0.5)
         
         XCTAssertNotNil(sut.error)
         XCTAssertEqual(sut.error, "Something is wrong with your tree")

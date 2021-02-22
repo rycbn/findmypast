@@ -8,8 +8,6 @@ extension PersonsClient {
             URLSession
                 .shared
                 .dataTaskPublisher(for: url)
-                .delay(for: 0.3, scheduler: DispatchQueue.main)
-                .receive(on: DispatchQueue.main)
                 .map(\.data)
                 .decode(type: PersonsResponse.self, decoder: JSONDecoder())
                 .eraseToAnyPublisher()

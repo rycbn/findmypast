@@ -1,5 +1,5 @@
 import SwiftUI
-import Kingfisher
+import AsyncImage
 
 public struct CircleThumbnailImage: View {
     private let shape = Circle()
@@ -11,16 +11,16 @@ public struct CircleThumbnailImage: View {
     
     public var body: some View {
         Group {
-            switch url {
-            case .none:
-                ThumbnailImagePlaceholder()
-            case .some:
-                KFImage(url)
+            if let url = url {
+                AsyncImage(url)
                     .placeholder {
                         ThumbnailImagePlaceholder()
                     }
                     .resizable()
                     .aspectRatio(contentMode: .fit)
+
+            } else {
+                ThumbnailImagePlaceholder()
             }
         }
         .clipShape(shape)

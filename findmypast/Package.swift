@@ -5,6 +5,7 @@ import PackageDescription
 private let targets: [String] = [
     "Shared",
     "SharedUI",
+    "AsyncImage",
     "Networking",
     "PersonsClient",
     "PersonsClientLive",
@@ -18,12 +19,7 @@ let package = Package(
     name: "findmypast",
     platforms: [.iOS(.v14)],
     products: targets.map { .library(name: $0, targets: [$0]) },
-    dependencies: [
-        .package(
-            url: "https://github.com/onevcat/Kingfisher",
-            from: "6.1.0"
-        ),
-    ],
+    dependencies: [],
     targets: [
         .target(
             name: "Shared",
@@ -36,8 +32,12 @@ let package = Package(
             name: "SharedUI",
             dependencies: [
                 "Shared",
-                "Kingfisher"
+                "AsyncImage"
             ]
+        ),
+        .target(
+            name: "AsyncImage",
+            dependencies: []
         ),
         .target(
             name: "Networking",

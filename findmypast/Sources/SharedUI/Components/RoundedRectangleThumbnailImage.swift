@@ -1,5 +1,5 @@
 import SwiftUI
-import Kingfisher
+import AsyncImage
 
 public struct RoundedRectangleThumbnailImage: View {
     private let shape = RoundedRectangle(cornerRadius: 16, style: .continuous)
@@ -11,16 +11,15 @@ public struct RoundedRectangleThumbnailImage: View {
     
     public var body: some View {
         Group {
-            switch url {
-            case .none:
-                ThumbnailImagePlaceholder()
-            case .some:
-                KFImage(url)
+            if let url = url {
+                AsyncImage(url)
                     .placeholder {
                         ThumbnailImagePlaceholder()
                     }
                     .resizable()
                     .aspectRatio(contentMode: .fit)
+            } else {
+                ThumbnailImagePlaceholder()
             }
         }
         .clipShape(shape)
